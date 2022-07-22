@@ -23,7 +23,8 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <button className='btn btn-outline-gavel text-light'>Distress</button>
+                <Link className='btn btn-outline-gavel text-light' to="/register">Register</Link>
+                <Link className='btn btn-outline-gavel text-light' to="/login">Login</Link>
             </div>
         </nav>
     </div>
