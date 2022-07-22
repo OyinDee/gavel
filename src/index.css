@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.btn-gavel {
+  color: #fff;
+  background-color: #0c1395;
+  border-color: #0c1396;
+}
+.btn-gavel:hover {
+  color: #fff;
+  background-color: #0c1395;
+  border-color: #0c1395;
+}
+
+.bg-gavel {
+  background-color: #0c1395 !important;
+}
+
+.btn-outline-gavel {
+  color: #0c1395;
+  border-color: #0c1395;
+}
+.btn-outline-gavel:hover {
+  color: #fff;
+  background-color: #0c1395;
+  border-color: #0c1395;
+}
