@@ -30,10 +30,11 @@ code {
 
 .btn-outline-gavel {
   color: #0c1395;
-  border-color: #0c1395;
+  border-color: #0c1395 !important;
 }
 .btn-outline-gavel:hover {
   color: #fff;
   background-color: #0c1395;
   border-color: #0c1395;
 }
+
