@@ -1,8 +1,6 @@
-import avatar from "../user_icon.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import UserNav from "../layouts/UserNav";
 import axios from "axios";
 import Post from "../components/Post";
 
