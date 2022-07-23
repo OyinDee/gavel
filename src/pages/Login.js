@@ -29,9 +29,9 @@ const Login = () => {
             setError(false);
             let url;
             if(lawyer == true) {
-                url = "http://gavell.herokuapp.com/attorneys/login"
+                url = "https://gavell.herokuapp.com/attorneys/login"
             } else {
-                url = "http://gavell.herokuapp.com/users/login"
+                url = "https://gavell.herokuapp.com/users/login"
             }
             axios.post(url, {email, password}).then((res) => {
                 setIsLoading(false);
