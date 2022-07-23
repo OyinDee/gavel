@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Attorney = () => {
+const Attorney = ({userData}) => {
   return (
     <div>Attorney</div>
   )

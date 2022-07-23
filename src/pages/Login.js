@@ -28,7 +28,7 @@ const Login = () => {
                 setError(res.data.message);
             } else {
                 localStorage.setItem("token", res.data.token);
-                navigate("/dashboard");
+                navigate("/auth");
             }
         }).catch((err) => {
             localStorage.removeItem("token");

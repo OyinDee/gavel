@@ -4,6 +4,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Navbar from "./layouts/Navbar";
 import About from "./pages/About";
 import Attorney from "./pages/Attorney";
+import Auth from "./components/Auth";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
@@ -12,40 +13,17 @@ import Register from "./pages/Register";
 
 const App = () => {
   const [userData, setUserData] = useState([]);
-  const url = "";
-  const navigate = useNavigate();
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    axios.get("http://localhost:4000/users/dashboard", {headers: 
-    {
-      "Authorization": `Bearer ${token}`,
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    }
-  }).then((res) => {
-    if(res.data.status == true) {
-      localStorage.removeItem("token");
-      navigate("/login");
-    } else {
-      if(res.data.user == "user") {
-        navigate("/user-dashboard");
-      } else {
-        navigate("/attorney");
-      }
-    }
-  })
-  }, []);
   return (
     <>
       <Routes>
-        <Navbar />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/attorney" element={<Attorney />} />
+        <Route path="/auth" element={<Auth user={setUserData} />} />
+        <Route path="/dashboard" element={<Dashboard userData={userData} />} />
+        <Route path="/attorney" element={<Attorney userData={userData} />} />
       </Routes>
     </>
   )
