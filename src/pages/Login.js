@@ -40,7 +40,11 @@ const Login = () => {
                     setError(res.data.message);
                 } else {
                     localStorage.setItem("token", res.data.token);
-                    navigate("/dashboard");
+                    if(lawyer == true) {
+                        navigate("/attorney")
+                    } else {
+                        navigate("/dashboard");
+                    }
                 }
             }).catch((err) => {
                 localStorage.removeItem("token");
