@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Dashboard = () => {
+const Dashboard = ({userData}) => {
+    console.log(userData)
   return (
     <div>Dashboard</div>
   )

@@ -5,10 +5,13 @@ import { FaAddressCard} from "react-icons/fa";
 import { FaTwitter} from "react-icons/fa";
 import { FaFacebookSquare} from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import Navbar from '../layouts/Navbar';
 
 const Contact = () => {
   return (
-    <div className="c_container">
+    <div>
+      <Navbar />
+      <div className="c_container">
         <div className="w-50 card text-center" id='contact_container'>
             <h1 className='card-title'>Contact Us</h1>
             <hr/>
@@ -26,6 +29,7 @@ const Contact = () => {
             <FaFacebookSquare/> <Link to="/twitter">_gavel</Link>
             </p>
         </div>
+      </div>
     </div>
     <div className='w-100 footer fs-5 text text-light' style={{backgroundColor: '#0c1395'}}> lorem ipsum dolor sit amet</div>
     </div>

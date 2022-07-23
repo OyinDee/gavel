@@ -24,11 +24,14 @@ const Login = () => {
         axios.post(url, {email, password}).then((res) => {
             setIsLoading(false);
             if(res.data.status == false) {
+                localStorage.removeItem("token");
                 setError(res.data.message);
             } else {
-                navigate("/dashboard");
+                localStorage.setItem("token", res.data.token);
+                navigate("/auth");
             }
         }).catch((err) => {
+            localStorage.removeItem("token");
             setIsLoading(false);
             setError(error.message);
         })
