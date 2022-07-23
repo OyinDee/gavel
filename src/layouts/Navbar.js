@@ -6,7 +6,7 @@ const Navbar = () => {
     <div>
         <nav className="justify-content-center navbar navbar-expand-lg navbar-dark bg-gavel">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">Gavel</Link>
+                <Link className="navbar-brand" to="/" style={{fontFamily: 'Ink Free'}}>Gavel</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>

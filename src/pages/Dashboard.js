@@ -38,6 +38,20 @@ const Dashboard = () => {
     <div>
         <h4 className="text-center display-4">{user.first_name} {user.last_name}</h4>
         <p className="text-center">{user.email}</p>
+<<<<<<< HEAD
+        <p className="text-center"> <Link to="/create-post" className="btn btn-gavel" >Create Post</Link> </p>
+        <div>
+                {error && <div className="text-center alert alert-danger text-danger">{error}</div> }
+                <div className='d-flex justify-content-center mx-auto col-6'>
+                    <div className="">
+                        {posts.map((val, i) => (
+                    <Post key={i} post={val} />
+                    ))}
+                    </div>
+                </div>
+            </div>
+=======
+>>>>>>> 36aa230345551f5273b8ec186b29fcc0ef2768ce
     </div>
   )
 }
