@@ -23,7 +23,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <Link className='btn btn-outline-gavel text-light ml-2 bg-warning' to="/distress">Alert</Link>
+                <Link className='btn btn-outline-gavel text-light ml-2 bg-warning fs-4' to="/distress">Alert!</Link>
                 <Link className='btn btn-outline-gavel text-light ml-2' to="/register">Register</Link>
                 <Link className='btn btn-outline-gavel text-light' to="/login">Login</Link>
             </div>
