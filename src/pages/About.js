@@ -26,7 +26,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-        <div className='w-100 footer fs-5 text-light' style={{backgroundColor: '#0c1395'}}></div>
+        
     </div>
     )
 }

@@ -1,8 +1,8 @@
 .a_container{
     background: url(/src/login_image_2.jpg) no-repeat center fixed;
     background-size: cover;
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding-top: 5.3em;
+    padding-bottom: 5.3em;
 }
 #about_container{
     margin-left: auto;
@@ -13,7 +13,7 @@
     padding: 1em;
 }
 .footer{
-    /* position: fixed; */
-    /* bottom: 0; */
-    height: 20px !important;
+    position: fixed;
+    bottom: 0;
+    height: 30px !important;
 }
