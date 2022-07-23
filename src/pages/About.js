@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../layouts/Navbar';
 import './About.css'
 
 const About = () => {
+
+    useEffect(() => {
+        document.title = "Gavel || About";
+    })
   return (
     <div>
         <Navbar />
@@ -22,7 +26,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-        <div className='w-100 footer fs-5 text text-light' style={{backgroundColor: '#0c1395'}}> lorem ipsum dolor sit amet</div>
+        <div className='w-100 footer fs-5 text-light' style={{backgroundColor: '#0c1395'}}></div>
     </div>
     )
 }

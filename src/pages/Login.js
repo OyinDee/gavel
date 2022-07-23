@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import login_image from "../login_image_2.jpg"
 
@@ -11,6 +11,10 @@ const Login = () => {
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [lawyer, setLawyer] = useState(false);
+
+    useEffect(() => {
+        document.title = "Gavel || Login";
+    });
 
     const login = () => {
         setIsLoading(true);
@@ -33,17 +37,18 @@ const Login = () => {
         }).catch((err) => {
             localStorage.removeItem("token");
             setIsLoading(false);
-            setError(error.message);
+            setError(err.message);
         })
     }
   return (
     <div className='d-flex flex-lg-row flex-sm-column flex-md-column flex-column flex-column-reverse flex-md-column-reverse flex-sm-column-reverse'>
         <div className="col-lg-5 col-sm-12">
             <div className='row'>
-                <div className='container mx-2 mt-3'>
+                <div className='container mx-2 mt-lg-5 mt-3'>
+                    
                     <h4 className='display-4 text-center my-2'>Login</h4>
-                    <p className='floats mx-3'><input type="checkbox" onClick={() => setLawyer(!lawyer)}/> Login as a Lawyer</p>
                     {error && <div className='alert alert-danger text-danger text-center'>{error}</div>}
+                    <p className='floats mx-3'><input type="checkbox" onClick={() => setLawyer(!lawyer)}/> Login as a Lawyer</p>
                     <input className='form-control w-100 my-3' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
                     <input type={showPwd ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} className='form-control w-100 my-3' placeholder='Password' />
                     <div className=''>

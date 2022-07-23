@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const Auth = ({user}) => {
-  const url = "";
+  const url = "https://gavell.herokuapp.com/dashboard";
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -14,15 +14,15 @@ const Auth = ({user}) => {
       "Accept": "application/json"
     }
   }).then((res) => {
-    if(res.data.status == true) {
+    if(res.data.status == false) {
       localStorage.removeItem("token");
       navigate("/login");
     } else {
-      if(res.data.user == "user") {
-        user(res.data.user);
-        navigate("/user-dashboard");
-      } else {
-        user(res.data.user);
+      if(res.data.userType == "regUser") {
+        user(res.data.userDetails);
+        navigate("/dashboard");
+      } else if(res.data.userType == "Lawyer") {
+        user(res.data.userDetails);
         navigate("/attorney");
       }
     }
