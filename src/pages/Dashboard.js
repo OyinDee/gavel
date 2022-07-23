@@ -7,6 +7,10 @@ const Dashboard = ({userData}) => {
   return (
     <div>
         <UserNav userData={userData} />
+        <div>
+            <h4 className="text-center">{userData.first_name} {userData.last_name}</h4>
+            <p className="text-center">{userData.email}</p>
+        </div>
     </div>
   )
 }

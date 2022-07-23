@@ -37,7 +37,7 @@ const Login = () => {
         }).catch((err) => {
             localStorage.removeItem("token");
             setIsLoading(false);
-            setError(error.message);
+            setError(err.message);
         })
     }
   return (
