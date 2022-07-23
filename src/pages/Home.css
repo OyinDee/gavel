@@ -1,0 +1,10 @@
+.home_background{
+    background: url(/src/register.jpg) no-repeat center fixed;
+    background-size: cover;
+    height: 39.8em;
+    padding: 12em;
+    font-weight: bold;
+}
+.btn{
+    background-color: #0c1395;
+}
