@@ -1,7 +1,7 @@
 .c_container{
     background: url(/src/login_image_2.jpg) no-repeat center fixed;
     background-size: covers;
-    padding-top: 7.5em;
+    /* padding-top: 7.5em; */
     padding-bottom: 7.5em;
 }
 #contact_container{

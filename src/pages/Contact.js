@@ -28,7 +28,6 @@ const Contact = () => {
             <br/>
             <FaTwitter/><Link to="/twitter"> gavel_justiceforall</Link>
             <br/>
-            <br/>
             <FaFacebookSquare/> <Link to="/twitter">_gavel</Link>
             </p>
         </div>

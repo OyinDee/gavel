@@ -20,11 +20,6 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-<<<<<<< HEAD
-                <Link className='btn btn-outline-gavel text-light ml-2 bg-warning fs-4' to="/distress">Alert!</Link>
-=======
-
->>>>>>> b2fd50dec23c30857673fb1f03d0194fe47379dc
                 <Link className='btn btn-outline-gavel text-light ml-2' to="/register">Register</Link>
                 <Link className='btn btn-outline-gavel text-light' to="/login">Login</Link>
             </div>
