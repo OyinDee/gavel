@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import Navbar from '../layouts/Navbar';
@@ -6,10 +7,12 @@ import './Home.css'
 const Home = () => {
   const getLocation=()=>{
     navigator.geolocation.getCurrentPosition((response)=>{
-          const rc=response.coords
-          const latitute=rc.latitude
-          const longitude=rc.longitude
-          console.log(longitude)
+          const rc=response.coords;
+          const latitude=rc.latitude;
+          const longitude=rc.longitude;
+          axios.get(`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&featureTypes=&location=${longitude},${latitude}`).then((res) => {
+            console.log(res);
+          })
     })
   }
   useEffect(() => {
