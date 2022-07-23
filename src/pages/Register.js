@@ -30,9 +30,9 @@ const Register = () => {
         setError(false);
         setIsLoading(true);
         if(lawyer == false) {
-          url = "http://gavell.herokuapp.com/users/register";
+          url = "https://gavell.herokuapp.com/users/register";
         } else {
-          url = "http://gavell.herokuapp.com/attorneys/register";
+          url = "https://gavell.herokuapp.com/attorneys/register";
         }
         axios.post(url, {first_name, last_name, email, phoneNumber, password}).then((res) => {
           setIsLoading(false);

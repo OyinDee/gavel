@@ -40,7 +40,7 @@ const CreatePost = () => {
     const [error, setError] = useState("");
 
     const createPost = () => {
-      const urls = "http://gavell.herokuapp.com/post"
+      const urls = "https://gavell.herokuapp.com/post"
       axios.post(urls, {email: user.email, title, body}).then((res) => {
         if(res.status == false) {
           setError(res.message);
