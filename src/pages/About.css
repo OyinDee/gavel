@@ -12,3 +12,8 @@
     background-color: #0c1395;
     padding: 1em;
 }
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 4em;
+}

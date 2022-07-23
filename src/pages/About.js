@@ -18,6 +18,7 @@ const About = () => {
                 To connect potential clients with lawyers without going through stress. We aim to provide a platform where people can air their grievances and get heard.
             </div>
         </div>
+        <div className='w-100 footer fs-5 text text-light' style={{backgroundColor: '#0c1395'}}> lorem ipsum dolor sit amet</div>
     </div>
     )
 }
