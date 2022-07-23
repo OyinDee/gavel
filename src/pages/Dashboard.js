@@ -4,8 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import UserNav from "../layouts/UserNav";
 import axios from "axios";
+import Post from "../components/Post";
 
 const Dashboard = () => {
+    const [error, setError] = useState(false);
+    const [posts, setPosts] = useState([]);
+    const urls = "";
+    useEffect(() => {
+        document.title = "Gavel || Dashboard";
+    })
     const [user, setUser] = useState("")
     const url = "https://gavell.herokuapp.com/dashboard";
     const navigate = useNavigate();
@@ -25,7 +32,18 @@ const Dashboard = () => {
         } else {
         if(res.data.userType == "regUser") {
             setUser(res.data.userDetails);
-            navigate("/dashboard");
+            const urls = "https://gavell.herokuapp.com/post/all";
+            axios.get(urls).then((res) => {
+                if(res.data.status == false) {
+                setError(res.data.message);
+                } else {
+                    console.log(res.data)
+                setPosts(res.data);
+                }
+            }).catch((err) => {
+                setError(err.message);
+            })
+            // navigate("/dashboard");
         } else if(res.data.userType == "Lawyer") {
             setUser(res.data.userDetails);
             navigate("/attorney");
@@ -38,7 +56,6 @@ const Dashboard = () => {
     <div>
         <h4 className="text-center display-4">{user.first_name} {user.last_name}</h4>
         <p className="text-center">{user.email}</p>
-<<<<<<< HEAD
         <p className="text-center"> <Link to="/create-post" className="btn btn-gavel" >Create Post</Link> </p>
         <div>
                 {error && <div className="text-center alert alert-danger text-danger">{error}</div> }
@@ -50,8 +67,6 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-=======
->>>>>>> 36aa230345551f5273b8ec186b29fcc0ef2768ce
     </div>
   )
 }
