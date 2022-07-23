@@ -61,7 +61,7 @@ const Register = () => {
             <input className='w-100 form-control my-3' placeholder='Phone Number' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
             <input  type={showPwd ? "text" : "password"} className='w-100 form-control my-3' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
             <p>
-              <span className='mx-5 text-white'><input type="checkbox" onClick={() => setShowPwd(!showPwd)} /> Show Password</span> <span className='mx-5 text-white'><input type="checkbox" onClick={() => setLawyer(!lawyer)} /> Login as a lawyer</span>
+              <span className='mx-5 text-white'><input type="checkbox" onClick={() => setShowPwd(!showPwd)} /> Show Password</span> <span className='mx-5 text-white'><input type="checkbox" onClick={() => setLawyer(!lawyer)} /> Register as a lawyer</span>
             </p>
             <button className='btn btn-outline-gavel w-100' onClick={signUp} >{isLoading ? <span className='spinner-border'></span> : "Register"}</button>
             <p className='text-white'>Already have an account? <Link to="/login"> Login</Link></p>
