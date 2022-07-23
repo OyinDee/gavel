@@ -16,8 +16,8 @@ code {
 
 
 .btn-gavel {
-  color: #fff !important;
-  background-color: #0c1395 !important;
+  color: #fff;
+  background-color: #0c1395;
   border-color: #0c1396;
 }
 .btn-gavel:hover {

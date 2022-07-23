@@ -30,9 +30,9 @@ const Register = () => {
         setError(false);
         setIsLoading(true);
         if(lawyer == false) {
-          url = "https://gavell.herokuapp.com/users/register";
+          url = "http://gavell.herokuapp.com/users/register";
         } else {
-          url = "https://gavell.herokuapp.com/attorneys/register";
+          url = "http://gavell.herokuapp.com/attorneys/register";
         }
         axios.post(url, {first_name, last_name, email, phoneNumber, password}).then((res) => {
           setIsLoading(false);
@@ -52,7 +52,7 @@ const Register = () => {
     <div className='bg-image'>
       <div className='container'>
         <div className='row'>
-          <div className='container col-sm-12 col-12 col-md-6 col-lg-6'>
+          <div className='container col-6'>
             <h4 className='my-2 display-4 text-center'>Register</h4>
             {error && <div className='alert alert-danger text-danger text-center'>{error}</div>}
             <input className='w-100 form-control my-3' placeholder='Firstname' value={first_name} onChange={(e) => setFirst_name(e.target.value)} />

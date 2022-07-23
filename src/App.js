@@ -23,10 +23,13 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="/auth" element={<Auth user={setUserData} />} /> */}
-        <Route path="/dashboard" element={<Dashboard userData={userData} />} />
-        {/* <Route path="/posts" element={<Posts userData={userData} />} /> */}
-        <Route path="/create-post" element={<CreatePost />} />
-        <Route path="/attorney" element={<Attorney userData={userData} />} />
+        <Route path="/dashboard" element={<Dashboard userData={userData} />} >
+          <Route path="/dashboard/posts" element={<Posts userData={userData} />} />
+          <Route path="/dashboard/create-post" element={<CreatePost />} />
+        </Route>
+        <Route path="/attorney" element={<Attorney userData={userData} />} >
+          <Route path="/attorney/posts" element={<Posts userData={userData} />} />
+        </Route>
       </Routes>
     </>
   )
