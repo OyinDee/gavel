@@ -4,6 +4,9 @@ import UserNav from '../layouts/UserNav';
 import { useNavigate } from 'react-router-dom';
 
 const CreatePost = () => {
+  useEffect(() => {
+    document.title = "Gavel || Create Post";
+  })
   const [user, setUser] = useState("")
     const url = "https://gavell.herokuapp.com/dashboard";
     const navigate = useNavigate();
