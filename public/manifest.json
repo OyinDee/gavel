@@ -3,18 +3,18 @@
   "name": "Gavel",
   "icons": [
     {
-      "src": "logo_icon",
+      "src": "logo_icon.jpeg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/jpeg"
     },
     {
-      "src": "logo_icon",
-      "type": "image/png",
+      "src": "logo_icon.jpeg",
+      "type": "image/jpeg",
       "sizes": "192x192"
     },
     {
-      "src": "logo_icon",
-      "type": "image/png",
+      "src": "logo_icon.jpeg",
+      "type": "image/jpeg",
       "sizes": "512x512"
     }
   ],
