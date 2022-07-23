@@ -14,7 +14,7 @@ const Auth = ({user}) => {
       "Accept": "application/json"
     }
   }).then((res) => {
-    if(res.data.status == true) {
+    if(res.data.status == false) {
       localStorage.removeItem("token");
       navigate("/login");
     } else {

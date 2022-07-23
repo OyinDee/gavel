@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Contact.css'
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaAddressCard} from "react-icons/fa";
@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 import Navbar from '../layouts/Navbar';
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = "Gavel || Contact"
+  })
   return (
     <div>
       <Navbar />
