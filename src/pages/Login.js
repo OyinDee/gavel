@@ -34,10 +34,10 @@ const Login = () => {
         })
     }
   return (
-    <div className='d-flex flex-lg-row flex-sm-column flex-md-column flex-column'>
+    <div className='d-flex flex-lg-row flex-sm-column flex-md-column flex-column flex-column-reverse flex-md-column-reverse flex-sm-column-reverse'>
         <div className="col-lg-5 col-sm-12">
             <div className='row'>
-                <div className='container mx-2'>
+                <div className='container mx-2 mt-3'>
                     <h4 className='display-4 text-center my-2'>Login</h4>
                     <p className='floats mx-3'><input type="checkbox" onClick={() => setLawyer(!lawyer)}/> Login as a Lawyer</p>
                     {error && <div className='alert alert-danger text-danger text-center'>{error}</div>}
@@ -53,7 +53,7 @@ const Login = () => {
             </div>
         </div>
         <div className='col-lg-7 col-sm-12'>
-            <img src={login_image} alt="Law" className='w-100 h-100' />
+            <img src={login_image} alt="Law" className='w-100 height' />
         </div>
     </div>
   )
