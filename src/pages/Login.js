@@ -17,28 +17,38 @@ const Login = () => {
     });
 
     const login = () => {
-        setIsLoading(true);
-        setError(false);
-        let url;
-        if(lawyer == true) {
-            url = "http://gavell.herokuapp.com/attorneys/login"
-        } else {
-            url = "http://gavell.herokuapp.com/users/login"
+        if(email===""&&password===""){
+            setError("Invalid credentials")
         }
-        axios.post(url, {email, password}).then((res) => {
-            setIsLoading(false);
-            if(res.data.status == false) {
-                localStorage.removeItem("token");
-                setError(res.data.message);
+
+        else if(email===""||password===""){
+            setError("Fill all fields")
+        }
+        else{
+            setIsLoading(true);
+            setError(false);
+            let url;
+            if(lawyer == true) {
+                url = "http://gavell.herokuapp.com/attorneys/login"
             } else {
-                localStorage.setItem("token", res.data.token);
-                navigate("/auth");
+                url = "http://gavell.herokuapp.com/users/login"
             }
-        }).catch((err) => {
-            localStorage.removeItem("token");
-            setIsLoading(false);
-            setError(err.message);
-        })
+            axios.post(url, {email, password}).then((res) => {
+                setIsLoading(false);
+                if(res.data.status == false) {
+                    localStorage.removeItem("token");
+                    setError(res.data.message);
+                } else {
+                    localStorage.setItem("token", res.data.token);
+                    navigate("/dashboard");
+                }
+            }).catch((err) => {
+                localStorage.removeItem("token");
+                setIsLoading(false);
+                setError(err.message);
+            })
+            
+        }
     }
   return (
     <div className='d-flex flex-lg-row flex-sm-column flex-md-column flex-column flex-column-reverse flex-md-column-reverse flex-sm-column-reverse'>

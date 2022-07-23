@@ -19,25 +19,34 @@ const Register = () => {
   });
 
   const signUp = () => {
-    let url;
-    setError(false);
-    setIsLoading(true);
-    if(lawyer == false) {
-      url = "http://gavell.herokuapp.com/users/register";
-    } else {
-      url = "http://gavell.herokuapp.com/attorneys/register";
+    if(first_name===""&&last_name===""&&email===""&&phoneNumber===""&&password===""){
+      setError("Invalid credentials")
     }
-    axios.post(url, {first_name, last_name, email, phoneNumber, password}).then((res) => {
-      setIsLoading(false);
-      if(res.data.status == false) {
-        setError(res.data.message);
-      } else {
-        navigate("/login");
+    else if (first_name===""||last_name===""||email===""||phoneNumber===""||password==="") {
+        setError("Fill all fields")
+    }  
+    else {
+        let url;
+        setError(false);
+        setIsLoading(true);
+        if(lawyer == false) {
+          url = "http://gavell.herokuapp.com/users/register";
+        } else {
+          url = "http://gavell.herokuapp.com/attorneys/register";
+        }
+        axios.post(url, {first_name, last_name, email, phoneNumber, password}).then((res) => {
+          setIsLoading(false);
+          if(res.data.status == false) {
+            setError(res.data.message);
+          } else {
+            navigate("/login");
+          }
+        }).catch((err) => {
+          setIsLoading(false);
+          setError(err.message);
+        })
+        
       }
-    }).catch((err) => {
-      setIsLoading(false);
-      setError(err.message);
-    })
   }
   return (
     <div className='bg-image'>

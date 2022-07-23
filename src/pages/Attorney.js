@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Attorney = ({userData}) => {
-    console.log(userData);
+const Attorney = () => {
+    // console.log(userData);
   return (
     <div>Attorney</div>
   )
