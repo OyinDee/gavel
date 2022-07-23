@@ -22,6 +22,7 @@ const About = () => {
                 </div>
             </div>
         </div>
+        <div className='w-100 footer fs-5 text text-light' style={{backgroundColor: '#0c1395'}}> lorem ipsum dolor sit amet</div>
     </div>
     )
 }
