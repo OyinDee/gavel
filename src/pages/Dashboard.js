@@ -59,8 +59,8 @@ const Dashboard = () => {
         <p className="text-center"> <Link to="/create-post" className="btn btn-gavel" >Create Post</Link> </p>
         <div>
                 {error && <div className="text-center alert alert-danger text-danger">{error}</div> }
-                <div className='col-lg-4 col-md-6 col-sm-12 col-12'>
-                    <div className="row">
+                <div className='d-flex justify-content-center mx-auto col-6'>
+                    <div className="">
                         {posts.map((val, i) => (
                     <Post key={i} post={val} />
                     ))}
