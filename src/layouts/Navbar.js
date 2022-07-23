@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-gavel">
-            <div className="container-fluid" style={{position: 'relative', marginRight: '0'}}>
-                <Link className="navbar-brand fs-2" to="/" style={{fontFamily : 'ink free'}}>Gavel</Link>
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/">Gavel</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
@@ -23,8 +23,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <Link className='btn btn-outline-gavel text-light ml-2 bg-warning' to="/distress">Alert</Link>
-                <Link className='btn btn-outline-gavel text-light ml-2' to="/register">Register</Link>
+                <Link className='btn btn-outline-gavel text-light' to="/register">Register</Link>
                 <Link className='btn btn-outline-gavel text-light' to="/login">Login</Link>
             </div>
         </nav>
