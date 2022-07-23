@@ -1,30 +1,59 @@
+import axios from 'axios';
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import login_image from "../login_image_2.jpg"
 
 const Login = () => {
+    const navigate = useNavigate();
     const [showPwd, setShowPwd] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [lawyer, setLawyer] = useState(false);
+
+    const login = () => {
+        setIsLoading(true);
+        setError(false);
+        let url;
+        if(lawyer == true) {
+            url = "http://gavell.herokuapp.com/attorneys/login"
+        } else {
+            url = "http://gavell.herokuapp.com/users/login"
+        }
+        axios.post(url, {email, password}).then((res) => {
+            setIsLoading(false);
+            if(res.data.status == false) {
+                setError(res.data.message);
+            } else {
+                navigate("/dashboard");
+            }
+        }).catch((err) => {
+            setIsLoading(false);
+            setError(error.message);
+        })
+    }
   return (
-    <div className='d-flex flex-lg-row flex-sm-column flex-md-column flex-xs-column'>
-        <div className="col-5 ms-3">
+    <div className='d-flex flex-lg-row flex-sm-column flex-md-column flex-column'>
+        <div className="col-lg-5 col-sm-12">
             <div className='row'>
-                <div className='container'>
+                <div className='container mx-2'>
                     <h4 className='display-4 text-center my-2'>Login</h4>
+                    <p className='floats mx-3'><input type="checkbox" onClick={() => setLawyer(!lawyer)}/> Login as a Lawyer</p>
+                    {error && <div className='alert alert-danger text-danger text-center'>{error}</div>}
                     <input className='form-control w-100 my-3' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
                     <input type={showPwd ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} className='form-control w-100 my-3' placeholder='Password' />
                     <div className=''>
                         <span className='mx-5'><input type="checkbox" onClick={() => setShowPwd(!showPwd)} /> Show Password </span>
                         <Link to="/forgot-password" className='mx-5'>Forgot password?</Link>
                     </div>
-                    <button className="btn btn-outline-gavel w-100 my-3">Login</button>
+                    <button className="btn btn-outline-gavel w-100 my-3" onClick={login}>{isLoading? <span className='spinner-border'></span>: "Login"}</button>
                     <p className='text-center'>Don't have an account? <Link to="/register">Register</Link></p>
                 </div>
             </div>
         </div>
-        <div className='col-7'>
-            <img src={login_image} alt="Law" className='w-100 h-100' width="250px" />
+        <div className='col-lg-7 col-sm-12'>
+            <img src={login_image} alt="Law" className='w-100 h-100' />
         </div>
     </div>
   )

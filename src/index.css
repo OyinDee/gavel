@@ -33,8 +33,16 @@ code {
   border-color: #0c1395 !important;
 }
 .btn-outline-gavel:hover {
-  color: #fff;
+  color: #fff !important;
   background-color: #0c1395;
   border-color: #0c1395;
 }
 
+.overflow {
+  object-fit: contain;
+  /* overflow-x: hidden !important; */
+}
+
+.floats {
+  float: right !important;
+}
